@@ -31,4 +31,4 @@ jfreechart-1.0.1\lib\jfreechart-1.0.jar
 Now All set!! Just run the analysis class and see the incrementally generated (x,y) co-ordinates for each algorithm.
 In our case x is Array Size, & y is the time taken by that respective algorithm.
 
-By default code will generate Worst case scenario graph, for Best case scenario comparison see the follow the comments mentioned in the code.
+By default code will generate Worst case scenario graph, for Best case scenario comparison follow the comments mentioned in the code.
