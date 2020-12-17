@@ -1,4 +1,4 @@
-# SortingAlgoComparisons
+# Sorting Algorithms Comparison
 Time Complexity comparison of Insertion, Selection &amp; Bubble sort using JFreeChart AWT output graph.
 
 The time complexity in Worst Case Scenario of all three algorithms is O(n^2), but as the size of input data increases, insertion sort performs far better than bubble sort and slightly better than selection sort.
