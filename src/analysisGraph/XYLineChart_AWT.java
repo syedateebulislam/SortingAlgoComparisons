@@ -65,9 +65,10 @@ public class XYLineChart_AWT extends ApplicationFrame {
    }
    
    public static void createGraph(double[] selectionX,double[] selectionY,double[] bubbleX,double[] bubbleY,double[] insertionX,double[] insertionY) {
+	   String scenario = "(Worst Case Scenario)";     //change Heading will reflect in graph as per scenario
 	   XYLineChart_AWT chart = new XYLineChart_AWT("Algorithms analysis window",
-		         "Sorting Algorithms comparison(Worst Case Scenario)",selectionX,selectionY,bubbleX,bubbleY,insertionX,insertionY);
-		      chart.pack( );     //change second argument string here for best case scenario graph heading     
+		         "Sorting Algorithms comparison"+scenario,selectionX,selectionY,bubbleX,bubbleY,insertionX,insertionY);
+		      chart.pack( );   
 		      RefineryUtilities.centerFrameOnScreen( chart );          
 		      chart.setVisible( true );
    }
