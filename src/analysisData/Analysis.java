@@ -41,7 +41,7 @@ public class Analysis {
 			 *initially it's 1000, in last iteration it will be 50000.
 			 */
 			//int[] insertionarray = arrayAscendFill(n);		//Best Case Scenario
-			int[] insertionarray = arrayDescendFill(n);	//Wost case scenario
+			int[] insertionarray = arrayDescendFill(n);	//Worst case scenario
 			
 			/*Step 4 for Insertion Sort-
 			 *Initializing a date to find system time 'before' calling sorting algo
@@ -79,7 +79,7 @@ public class Analysis {
 			//Doing Step 3 to 8 for Selection Sort Below
 			//Selection Sort Analysis---------------------------------------------------
 			//int[] selectionarray = arrayAscendFill(n);		//Best Case Scenario
-			int[] selectionarray = arrayDescendFill(n);	//Wost case scenario
+			int[] selectionarray = arrayDescendFill(n);	//Worst case scenario
 			
 			java.util.Date selectionDate1 = new java.util.Date();
 			Timestamp selectionTimestamp1 = new Timestamp(selectionDate1.getTime());		
@@ -100,12 +100,13 @@ public class Analysis {
 			//Doing Step 3 to 8 for Bubble Sort Below
 			//Bubble Sort Analysis------------------------------------------------------
 			//int[] bubblearray = arrayAscendFill(n);		//Best Case Scenario
-			int[] bubblearray = arrayDescendFill(n);	//Wost case scenario
+			int[] bubblearray = arrayDescendFill(n);	//Worst case scenario
 			
 			java.util.Date bubbleDate1 = new java.util.Date();
 			Timestamp bubbleTimestamp1 = new Timestamp(bubbleDate1.getTime());		
 			
-			bubbleSort(bubblearray);
+			bubbleSort(bubblearray);//Best Case O(n^2)
+			//bubbleSortOptimized(bubblearray);//Best Case O(n)
 			
 			java.util.Date bubbleDate2 = new java.util.Date();
 			Timestamp bubbleTimestamp2 = new Timestamp(bubbleDate2.getTime());
@@ -141,7 +142,8 @@ public class Analysis {
 	 }
 	return a;
 	}
-
+	
+	//Normal Bubble Sort - Best Case O(n^2)
 	static int[] bubbleSort(int[] a)
 	{
 	int i=0;
@@ -161,6 +163,34 @@ public class Analysis {
 		   }
 		}
 		return a;
+	}
+
+	//Optimized Bubble Sort - Best Case O(n)
+	static void bubbleSortOptimized(int[] arr)
+	{
+		int i, j, temp;
+		boolean swapped;
+		int n = arr.length;
+		for (i = 0; i < n - 1; i++)
+		{
+			swapped = false;
+			for (j = 0; j < n - i - 1; j++)
+			{
+				if (arr[j] > arr[j + 1])
+				{
+					// swap arr[j] and arr[j+1]
+					temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+					swapped = true;
+				}
+			}
+
+			// IF no two elements were
+			// swapped by inner loop, then break
+			if (swapped == false)
+				break;
+		}
 	}
 	
 	static int[] selectionSort(int[] a)
@@ -209,3 +239,4 @@ public class Analysis {
 	return a;
 	}
 }
+
